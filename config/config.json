@@ -14,10 +14,14 @@
     "dialect": "mysql"
   },
   "production": {
+    "dialect": "mysql",
+    "url": "mysql://root:lHU4k1GMP6xuuFUrhBKS@containers-us-west-129.railway.app:7930/railway",
+    "database": "railway",
+    "host": "containers-us-west-129.railway.app",
+    "port":"7930" ,
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "lHU4k1GMP6xuuFUrhBKS"
   }
+  
 }
+

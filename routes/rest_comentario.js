@@ -2,12 +2,16 @@ var express = require('express');
 var router = express.Router();
 
 /* IMPORTE El ARCHIVO CON EL NOMBRE_CLASE */
-const producto= require('../models').producto;
+
+
+module.exports = router;
+const comentario= require('../models').comentario;
 router.get('/findAll/json', function(req, res, next) {  
- 
+
+  
     /* MÉTODO ESTÁTICO findAll  */
 
-  producto.findAll({  
+  comentario.findAll({  
       attributes: { exclude: ["updatedAt", "createdAt"] } ,
   })  
   .then(resultado => {  
@@ -16,11 +20,12 @@ router.get('/findAll/json', function(req, res, next) {
   .catch(error => res.status(400).send(error)) 
 
 });
+
 router.get('/findById/:id/json', function(req, res, next) {  
 
     let id = req.params.id;
 
-    producto.findByPk(id)
+    comentario.findByPk(id)
         .then(instancia => {
           if(instancia) {
             res.status(200).json(instancia);
@@ -32,7 +37,7 @@ router.get('/findById/:id/json', function(req, res, next) {
   });
   router.post('/save', function(req, res, next) {  
 
-    producto.create(req.body)
+    comentario.create(req.body)
       .then(instancia => {
         res.status(201).json(instancia);
       })
@@ -45,7 +50,7 @@ router.get('/findById/:id/json', function(req, res, next) {
 
     let id = req.params.id;
 
-    producto.findByPk(id)
+    comentario.findByPk(id)
       .then(instancia => {
         if(instancia) {
 
@@ -68,7 +73,7 @@ router.get('/findById/:id/json', function(req, res, next) {
 
     let id = req.params.id;
 
-    producto.findByPk(id)
+    comentario.findByPk(id)
       .then(instancia => {
         if(instancia) {
 
@@ -87,4 +92,5 @@ router.get('/findById/:id/json', function(req, res, next) {
       .catch(error => res.status(400).send(error))
       
   });
+  
 module.exports = router;

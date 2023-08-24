@@ -1,4 +1,6 @@
-const Sequelize = require('sequelize');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/config.json'); 
+
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('usuario', {
     ID: {
@@ -34,3 +36,4 @@ module.exports = function(sequelize, DataTypes) {
     ]
   });
 };
+

@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 /* IMPORTE El ARCHIVO CON EL NOMBRE_CLASE */
-const producto= require('../models').producto;
+const transaccion = require('../models').transaccion;
 router.get('/findAll/json', function(req, res, next) {  
- 
+  
+
     /* MÉTODO ESTÁTICO findAll  */
 
-  producto.findAll({  
+  transaccion.findAll({  
       attributes: { exclude: ["updatedAt", "createdAt"] } ,
   })  
   .then(resultado => {  
@@ -20,7 +21,7 @@ router.get('/findById/:id/json', function(req, res, next) {
 
     let id = req.params.id;
 
-    producto.findByPk(id)
+    transaccion.findByPk(id)
         .then(instancia => {
           if(instancia) {
             res.status(200).json(instancia);
@@ -32,7 +33,7 @@ router.get('/findById/:id/json', function(req, res, next) {
   });
   router.post('/save', function(req, res, next) {  
 
-    producto.create(req.body)
+    transaccion.create(req.body)
       .then(instancia => {
         res.status(201).json(instancia);
       })
@@ -45,7 +46,7 @@ router.get('/findById/:id/json', function(req, res, next) {
 
     let id = req.params.id;
 
-    producto.findByPk(id)
+    transaccion.findByPk(id)
       .then(instancia => {
         if(instancia) {
 
@@ -68,7 +69,7 @@ router.get('/findById/:id/json', function(req, res, next) {
 
     let id = req.params.id;
 
-    producto.findByPk(id)
+    transaccion.findByPk(id)
       .then(instancia => {
         if(instancia) {
 
