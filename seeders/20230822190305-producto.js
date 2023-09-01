@@ -32,7 +32,9 @@ module.exports = {
        NombreProducto: 'Relog',
        Descripcion: 'esta es la Descripcion ........',
        Precio: 34,
-       Categoria: 'Bisuteria'
+       Categoria: 'Bisuteria',
+       Url: 'https://static.nike.com/a/images/t_default/cb63b991-c6da-4c5c-9eaa-1f54906bed30/calzado-de-f%C3%BAtbol-para-terrenos-m%C3%BAltiples-mercurial-vapor-15-academy-5DNpWz.png'
+
       }], {});
     
   },

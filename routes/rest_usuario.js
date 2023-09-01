@@ -6,17 +6,33 @@ const usuario = require('../models').usuario;
 router.get('/findAll/json', function(req, res, next) {  
  
 
-    /* MÉTODO ESTÁTICO findAll  */
 
+  const { rol } = req.user;
+
+  if (rol !== 'admin') {
+      return res.sendStatus(403);
+  }
+  
+  /* MÉTODO ESTÁTICO findAll  */
   usuario.findAll({  
-      attributes: { exclude: ["updatedAt", "createdAt"] } ,
+    attributes: { exclude: ["updatedAt", "createdAt"] } ,
   })  
   .then(resultado => {  
-      res.json(resultado);  
+    res.json(resultado);  
   })  
   .catch(error => res.status(400).send(error)) 
+  });
 
-});
+
+
+
+
+
+
+
+
+
+
 router.get('/findById/:id/json', function(req, res, next) {  
 
     let id = req.params.id;
