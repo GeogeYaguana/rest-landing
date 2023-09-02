@@ -1,7 +1,7 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-const comentario = require('../models').comentario;
+const producto = require('../models').producto;
 
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -11,7 +11,8 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await comentario.sync()
+    await producto.sync()
+
   },
 
   async down (queryInterface, Sequelize) {
@@ -21,6 +22,8 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('comentario');
+    await queryInterface.dropTable('producto');
+
   }
 };
+
