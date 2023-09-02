@@ -15,12 +15,12 @@
   },
   "production": {
     "dialect": "mysql",
-    "url": "mysql://root:lHU4k1GMP6xuuFUrhBKS@containers-us-west-129.railway.app:7930/railway",
+    "url": "mysql://root:2lumTZPxT0TzQTiK0hB6@containers-us-west-50.railway.app:7261/railway",
     "database": "railway",
-    "host": "containers-us-west-129.railway.app",
-    "port":"7930" ,
+    "host": "containers-us-west-50.railway.app",
+    "port":"7261" ,
     "username": "root",
-    "password": "lHU4k1GMP6xuuFUrhBKS"
+    "password": "2lumTZPxT0TzQTiK0hB6"
   }
   
 }
